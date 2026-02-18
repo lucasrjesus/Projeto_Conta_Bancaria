@@ -1,89 +1,106 @@
-import rls from "readline-sync";
+import leia from "readline-sync";
+import { Colors } from './src/util/Colors';
 
 export function main() {
+
     let opcao: number;
 
-while (true) 
+    while (true) {
 
-console.log("***************************************************************");
-console.log("                                                               ");
-console.log("                       Banco Crefiza com Z                     ");
-console.log("                                                               ");
-console.log("***************************************************************");
-console.log("                                                               ");
-console.log("              1 - Criar conta                                  ");
-console.log("              2 - Listar todas as Contas                       ");
-console.log("              3 - Buscar Conta por Numero                      ");
-console.log("              4 - Atualizar Dados da Conta                     ");
-console.log("              5 - Apagar Conta                                 ");
-console.log("              6 - Sacar                                        ");
-console.log("              7 - Depositar                                    ");
-console.log("              8 - Transferir valores entre Contas              ");
-console.log("              9 - Sair                                         ");
-console.log("                                                               ");
-console.log("***************************************************************");
-console.log("                                                               ");
+        console.log(Colors.bg.black, Colors.fg.green, 
+                    "*****************************************************");
+        console.log("                                                     ");
+        console.log("                BANCO CREFIZA COM Z                  ");
+        console.log("                                                     ");
+        console.log("*****************************************************");
+        console.log("                                                     ");
+        console.log("            1 - Criar Conta                          ");
+        console.log("            2 - Listar todas as Contas               ");
+        console.log("            3 - Buscar Conta por Numero              ");
+        console.log("            4 - Atualizar Dados da Conta             ");
+        console.log("            5 - Apagar Conta                         ");
+        console.log("            6 - Sacar                                ");
+        console.log("            7 - Depositar                            ");
+        console.log("            8 - Transferir valores entre Contas      ");
+        console.log("            0 - Sair                                 ");
+        console.log("                                                     ");
+        console.log("*****************************************************");
+        console.log("                                                     ", 
+        Colors.reset);
 
-console.log("Entre com a opção desejada: ");
-opcao = rls.questionInt("");
- 
-if (opcao == 9){
-    console.log("\nBanco Crefiza com Z - Simplifica, vem pra Crefiza!");
-    sobre();
-    process.exit(0);
+        console.log(Colors.fg.green, "Entre com a opção desejada: ");
+        opcao = leia.questionInt("");
+
+        if (opcao === 0) {
+            console.log(Colors.fg.greenstrong, "\nBanco Crefiza com Z - Simplifica, vem pra Crefiza!");
+            sobre();
+            console.log(Colors.reset, "");
+            process.exit(0);
+        }
+
+        switch (opcao) {
+            case 1:
+                console.log(Colors.fg.whitestrong, "\n\nCriar Conta\n\n", Colors.reset);
+                
+                keyPress()
+                break;
+            case 2:
+                console.log(Colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 3:
+                console.log(Colors.fg.whitestrong, "\n\nConsultar dados da Conta - por número\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 4:
+                console.log(Colors.fg.whitestrong, "\n\nAtualizar dados da Conta\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 5:
+                console.log(Colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 6:
+                console.log(Colors.fg.whitestrong, "\n\nSaque\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 7:
+                console.log(Colors.fg.whitestrong, "\n\nDepósito\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            case 8:
+                console.log(Colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", Colors.reset);
+
+                keyPress()
+                break;
+            default:
+                console.log(Colors.fg.whitestrong, "\nOpção Inválida!\n", Colors.reset);
+
+                keyPress()
+        }
+    }
+
 }
-switch (opcao){
-    case 1:
-        console.log("\n\n");
 
-        break;
-         case 1:
-        console.log("\n\n");
-
-        break;
-         case 2:
-        console.log("\n\n");
-
-        break;
-         case 3:
-        console.log("\n\n");
-
-        break;
-         case 4:
-        console.log("\n\n");
-
-        break;
-         case 5:
-        console.log("\n\n");
-
-        break;
-         case 6:
-        console.log("\n\n");
-
-        break;
-         case 7:
-        console.log("\n\n");
-
-        break;
-         case 8:
-        console.log("\n\n");
-
-        break;
-        default:
-            console.log("\nOpcão Inválida!\n");
-
-            break;
-}
+/* Função com os dados da pessoa desenvolvedora */
+function sobre(): void {
+    console.log("\n*****************************************************");
+    console.log("Projeto Desenvolvido por: ");
+    console.log("Lucas Ribeiro de Jesus - lrj.lucasribeiro@gmail.com");
+    console.log("github.com/lucasrjesus");
+    console.log("*****************************************************");
 }
 
-
-export function sobre(): void {
-    console.log("\n****************************************");
-    console.log("Projeto desenvolvido por: Lucas Jesus");
-    console.log("Generation Brazsil - generation@generation.org");
-    console.log("github.com/conteudoGeneration");
-    console.log("******************************************");
-} 
+/* Função de pausa entre as opções do menu */
+function keyPress(): void {
+    console.log(Colors.reset,"\nPressione enter para continuar...");
+    leia.prompt();
+}
 
 main();
-
