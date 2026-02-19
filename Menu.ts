@@ -1,9 +1,25 @@
 import leia from "readline-sync";
 import { Colors } from './src/util/Colors';
+import { Conta } from "./src/model/Conta";
 
 export function main() {
 
     let opcao: number;
+
+    // *Conta 1: numero 1, agencia 123, Titular "Adriely", Tipo 1, Saldo 10000*
+    //const c1: Conta = new Conta(1, 123, "Adriely", 1, 10000);
+    
+    // Test métodos da conta 1
+    //c1.visualizar();
+    //c1.sacar(1500);
+    //c1.depositar(200);
+
+    // *Conta 2: numero, agencia, Titular, Tipo, Saldo*
+    //const c2: Conta = new Conta(2, 123, "João", 2, 500);
+    
+    // Testa métodos da conta 2
+    //c2.visualizar();
+    //c2.sacar(1000); // Teste de saldo insuficiente
 
     while (true) {
 
@@ -32,7 +48,7 @@ export function main() {
         opcao = leia.questionInt("");
 
         if (opcao === 0) {
-            console.log(Colors.fg.greenstrong, "\nBanco Crefiza com Z - Simplifica, vem pra Crefiza!");
+            console.log(Colors.fg.green, "\nBanco Crefiza com Z - Simplifica, vem pra Crefiza!");
             sobre();
             console.log(Colors.reset, "");
             process.exit(0);
