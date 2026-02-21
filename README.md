@@ -187,13 +187,13 @@ Estrutura organizada para facilitar **manutenção, escalabilidade e leitura té
 **1️⃣ Clone o repositório**
 
 ```bash
-git clone https://github.com/lucasrjesus/ProjetoContaBancaria.git
+git clone https://github.com/lucasrjesus/Projeto_Conta_Bancaria
 ```
 
 **2️⃣ Acesse a pasta do projeto via terminal**
 
 ```bash
-cd ProjetoContaBancaria
+cd Projeto_Conta_Bancaria
 ```
 
 **3️⃣ Instale as dependências**
